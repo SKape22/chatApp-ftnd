@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import './auth.css'
 import { ToastContainer, toast } from 'react-toastify';
@@ -15,6 +15,12 @@ const Register = () => {
         confPass: ""
     });
     
+    useEffect(() => {
+      if (localStorage.getItem('chatApp-user')) {
+        navigate('/');
+      }
+    },[])
+
     const toastParams = {
         position: "bottom-right",
         autoClose: 5000,

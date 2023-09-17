@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import './auth.css'
 import { ToastContainer, toast } from 'react-toastify';
@@ -13,6 +13,12 @@ const Login = () => {
         pass: "",
     });
     
+    useEffect(() => {
+      if (localStorage.getItem('chatApp-user')) {
+        navigate('/');
+      }
+    },[])
+
     const toastParams = {
         position: "bottom-right",
         autoClose: 5000,
@@ -85,7 +91,7 @@ const Login = () => {
                         Submit
                     </button>
                     <span>
-                        Don'y have and account registered ? <Link to="/regiter"> Register </Link>
+                        Don't have and account? <Link to="/register"> Register </Link>
                     </span>
                 </form>
             </div>
