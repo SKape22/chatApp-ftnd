@@ -1,0 +1,15 @@
+.welcome-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    color: white;
+}
+
+/* .welcome-text {
+    color: white;
+} */
+.welcome-username {
+    color: blue
+}

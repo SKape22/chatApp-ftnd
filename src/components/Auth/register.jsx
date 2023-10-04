@@ -68,7 +68,7 @@ const Register = () => {
                     'chatApp-user',
                     JSON.stringify(data.user)
                 )
-                navigate("/");
+                navigate("/setAvatar");
             }
 
         };
