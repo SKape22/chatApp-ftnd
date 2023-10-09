@@ -53,7 +53,6 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (validate()) {
-            console.log("api called")
             const {pass, username, email} = credentials;
             const {data} = await axios.post(registerRoute, {
                 username, email, pass

@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import './welcome.css'
 
-const Welcome = ({ user }) => {
+const Welcome = () => {
     const [currentUsename, setCurrentUserName] = useState(undefined);
 
+    const getUserData = async () => {
+      const userData = await JSON.parse(
+        localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE_KEY)
+      );
+
+      setCurrentUserName(userData.username)
+    }
     useEffect(() => {
-        if (user) {
-            setCurrentUserName(user.username);
-        }
-    },[user])
+      getUserData();
+    },[])
 
   return (
     <>

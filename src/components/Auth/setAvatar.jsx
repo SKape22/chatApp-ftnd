@@ -51,7 +51,6 @@ const SetAvatar = () => {
     
     async function fetchAvatars() {
         const data = [];
-        console.log(Math.round(Math.random()*100000000));
         const image1 = await axios.get(
             `${url}/${Math.round(Math.random()*100000000)}/${Math.round(Math.random()*1000)}`
             );

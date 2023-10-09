@@ -43,7 +43,6 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (validate()) {
-            console.log("api called")
             const {username, pass} = credentials;
             const {data} = await axios.post(loginRoute, {
                 username, pass
